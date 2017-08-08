@@ -1,11 +1,11 @@
 import React from 'react';
 import Component from '../components/Component';
 
-export default class PageHandler extends React.Component{
+export default class Home extends React.Component{
   render() {
     return (
       <div className="nav">
-        <h2>Handler</h2>
+        <h2>Home</h2>
         <Component />
       </div>
     );
