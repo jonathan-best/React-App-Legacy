@@ -31,12 +31,12 @@ app.get('*', function (req, res) {
 	);
   const templateProps = {
     content: content,
-    jsUrl: '//localhost:8082',
+    jsUrl: process.env.NODE_ENV === 'prod' ? '' : '//localhost:8082',
     version: '?v=' + uuid.v4()
   };
   res.render('index', templateProps);
 });
 
 app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'));
+    console.log('Node app is running on port', app.get('port'), process.env.NODE_ENV);
 });

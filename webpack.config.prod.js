@@ -9,16 +9,12 @@ const extractSass = new ExtractTextPlugin({
 module.exports = {
     devtool: 'inline-source-map',
     entry: {
-      app: [
-        'webpack/hot/only-dev-server',
-        'webpack-dev-server/client?http://localhost:8082',
-        path.join(__dirname, './src/client/entry')
-      ]
+      app: path.join(__dirname, './src/client/entry')
     },
     output: {
-        path: __dirname + '/public/build',
+        path: __dirname + '/public/build/',
         filename: "scripts/[name].js",
-        publicPath: 'http://localhost:8082/build/',
+        publicPath: '/build/',
     },
     resolve: {
       extensions: ['.js', '.scss']
